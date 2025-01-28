@@ -56,13 +56,13 @@ function ConvertHandler() {
     const factor = conversionFactors[initUnit.toLowerCase()];
 
     if (!factor) return "Invalid unit";
-    return parseFloat((initNum * factor).toFixed(2));
+    return parseFloat((initNum * factor).toFixed(5));
   };
 
   this.getString = function (initNum, initUnit, returnNum, returnUnit) {
     let fullInitUnit = this.spellOutUnit(initUnit);
     let fullReturnUnit = this.spellOutUnit(returnUnit);
-    
+
     return `${initNum} ${fullInitUnit} converts to ${returnNum} ${fullReturnUnit}`;
   };
 }
